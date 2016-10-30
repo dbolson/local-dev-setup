@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Install rbenv
+      homebrew: pkg={{item}} state=present
+      with_items:
+        - rbenv
+        - rbenv-gemset
+        - ruby
+        - ruby-build
+    - name: Install Ruby
+      command: rbenv install 2.3.1
+    - name: Set global Ruby
+      command: rbenv global 2.3.1

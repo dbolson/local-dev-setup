@@ -6,4 +6,5 @@ brew install python python3 ansible
 
 ansible-playbook -K -i inventory \
   vim.yml \
-  utils.yml
+  utils.yml \
+  ruby.yml

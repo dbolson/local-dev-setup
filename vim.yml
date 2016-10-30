@@ -12,5 +12,4 @@
         repo=git@github.com:dbolson/dotvim.git
         dest=~/.vim
     - name: Set up Vim
-      command: >
-        ~/.vim/bin/setup
+      command: ~/.vim/bin/setup
