@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Install base packages
+      homebrew: pkg={{item}} state=present
+      with_items:
+        - ack
+        - ctags
+        - the_silver_searcher
+        - tree
