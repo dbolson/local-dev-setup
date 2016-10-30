@@ -1,0 +1,7 @@
+echo "Updating Homebrew"
+brew update
+
+echo "Installing Python"
+brew install python python3 ansible
+
+ansible-playbook -K -i inventory vim.yml
