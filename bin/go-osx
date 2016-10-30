@@ -1,0 +1,12 @@
+echo "Updating Homebrew"
+#brew update
+
+echo "Installing Python"
+#brew install python python3 ansible
+
+cd playbooks/osx
+
+ansible-playbook -K -i ../../inventory \
+  vim.yml \
+  utils.yml \
+  ruby.yml

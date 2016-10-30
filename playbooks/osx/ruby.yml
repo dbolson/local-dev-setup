@@ -8,7 +8,15 @@
         - rbenv-gemset
         - ruby
         - ruby-build
+
+    - command: rbenv global
+      register: installed_ruby
+      changed_when: "installed_ruby.stdout != '2.3.1'"
+
     - name: Install Ruby
       command: rbenv install 2.3.1
+      when: installed_ruby|changed
+
     - name: Set global Ruby
       command: rbenv global 2.3.1
+      when: installed_ruby|changed
