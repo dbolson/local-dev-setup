@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Install Vim
+      homebrew: pkg=vim state=present
+      sudo: no
+    - name: Install dotfiles
+      git: >
+        repo=git@github.com:dbolson/dotvim.git
+        dest=~/.vim
+      sudo: no
+    - name: Set up Vim
+      command: >
+        ~/.vim/bin/setup
+      sudo: no
