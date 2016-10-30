@@ -3,13 +3,17 @@
   tasks:
     - name: Install Vim
       homebrew: pkg=vim state=present
+
     - name: Install MacVim
       homebrew: pkg=macvim state=present
+
     - name: Link MacVim
       command: brew linkapps macvim
+
     - name: Install dotfiles
       git: >
         repo=git@github.com:dbolson/dotvim.git
         dest=~/.vim
+
     - name: Set up Vim
       command: ~/.vim/bin/setup
